@@ -1,0 +1,14 @@
+/* Styles for mobile screens */
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  }
+
+.desktop-navbar, [class^="desktop-"] {
+  display: none;
+}
+
+h1 {
+color: black;
+}
