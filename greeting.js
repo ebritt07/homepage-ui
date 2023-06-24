@@ -6,7 +6,7 @@ function getGreeting() {
     let greeting;
     
     if (hour >= 0 && hour < 12) {
-      greeting = "Top of the morning";
+      greeting = "Good morning";
     } else if (hour >= 12 && hour < 17) {
       greeting = "Good afternoon";
     } else {
