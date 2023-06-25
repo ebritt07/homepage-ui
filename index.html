@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>Elliot Britton - developer</title>
-    <link rel="stylesheet" href="style/desktopStyle.css">
-    <link rel="stylesheet" media="(max-width: 600px)" href="style/mobileStyle.css">
+    <title>Elliot B</title>
+    <link rel="stylesheet" href="css/desktopStyle.css">
+    <link rel="stylesheet" media="(max-width: 600px)" href="css/mobileStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script src="js/greeting.js"></script>
+    <script src="js/projects.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +34,6 @@
             </div>
         </div>
     </div>
-
     <hr>
 
     <!-- central section -->
@@ -41,11 +43,14 @@
                 <img src="static/profile.jpeg" alt="profile picture of me">
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="padding-left: 30px;">
             <h1><span id="greeting"></span></h1>
             <p>Welcome to my collection of coding projects.</p>
             <p><b>Select projects:</b></p>
-            <button class="circle-button">bitcoin trader</button>
+            <br>
+            <div id="project-buttons" style="display: flex; align-items: center;">
+                <button id="placeholder" class="circle-button">loading projects...</button>
+            </div>
         </div>
     </div>
 
@@ -67,11 +72,13 @@
         </div>
         <div class="column">
             <h3>Repo</h3>
-            <p><a href="https://linkedin.com/in/elliotbritton" target="_blank">Visit this site's Github repository</a></p>
+            <p><a href="https://linkedin.com/in/elliotbritton" target="_blank">Visit this site's Github repository</a>
+            </p>
         </div>
     </div>
 
-    <script src="greeting.js"></script>
+    <script src="js/fillProjects.js"></script>
+
 </body>
 
 </html>
