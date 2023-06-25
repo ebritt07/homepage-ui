@@ -1,0 +1,19 @@
+name: Count Files
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if necessary
+
+jobs:
+  count-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Count files
+        run: |
+          file_count=$(find . -type f | wc -l)
+          echo "Number of files in repository: $file_count"
