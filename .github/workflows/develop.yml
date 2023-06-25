@@ -1,9 +1,9 @@
-name: Count Files
+name: Count Files (develop)
 
 on:
   push:
     branches:
-      - main  # Change this to your default branch if necessary
+      - develop
 
 jobs:
   count-files:
@@ -13,7 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Count files
+      - name: Print branch name
+        run: |
+          echo "Branch name: ${{ github.ref }}"
+
+      - name: Count files (develop)
         run: |
           file_count=$(find . -type f | wc -l)
           echo "Number of files in repository: $file_count"
