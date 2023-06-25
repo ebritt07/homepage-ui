@@ -5,7 +5,7 @@ const projects = [
     color: "#337ab7",
   },
   {
-    title: "java spring app",
+    title: "Java Spring App",
     link: "https://github.com/ebritt07/homepage-service",
     color: "#fcb103",
   },
