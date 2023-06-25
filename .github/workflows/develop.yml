@@ -1,23 +1,42 @@
-name: Count Files (develop)
+name: Non-prod workflow
 
 on:
   push:
-    branches:
-      - develop
+    branches-ignore:
+      - main
 
 jobs:
-  count-files:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Print branch name
+            
+      - name: Code quality checks
+        run: |
+          echo "TODO: This step should check code format and spot bugs."
+      
+  print-branch-and-file-count:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Print Branch Name
         run: |
           echo "Branch name: ${{ github.ref }}"
-
-      - name: Count files (develop)
+      
+      - name: Count HTML Files
         run: |
-          file_count=$(find . -type f | wc -l)
-          echo "Number of files in repository: $file_count"
+          file_count=$(find . -type f -name "*.html" | wc -l)
+          echo "Number of .html files in this repo: $file_count"
+
+  aws-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assume IAM role
+        id: assume-role
+        run: |
+          echo "TODO: assume IAM role and list S3 buckets"

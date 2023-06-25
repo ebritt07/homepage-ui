@@ -1,4 +1,4 @@
-name: Count Files
+name: Prod workflow
 
 on:
   push:
@@ -6,14 +6,14 @@ on:
       - main  # Change this to your default branch if necessary
 
 jobs:
-  count-files:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Count files
+      - name: Count HTML files
         run: |
-          file_count=$(find . -type f | wc -l)
-          echo "Number of files in repository: $file_count"
+          file_count=$(find . -type f -name "*.html" | wc -l)
+          echo "Number of .html files in this repo: $file_count"
