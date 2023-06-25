@@ -1,14 +1,15 @@
-/* Styles for mobile screens */
+/* Styles for mobile screen size */
 
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 22px;
-  }
+}
 
-.desktop-navbar, [class^="desktop-"] {
+.desktop-navbar,
+[class^="desktop-"] {
   display: none;
 }
 
 h1 {
-color: black;
+  color: black;
 }

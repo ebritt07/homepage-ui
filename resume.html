@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Elliot Britton - developer</title>
-        <link rel="stylesheet" href="style/desktopStyle.css">
-        <link rel="stylesheet" media="(max-width: 600px)" href="style/mobileStyle.css">
 
-    </head>
-    <body>
+<head>
+    <title>Elliot B</title>
+    <link rel="stylesheet" href="css/desktopStyle.css">
+    <link rel="stylesheet" media="(max-width: 600px)" href="css/mobileStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script src="static/projects.js"></script>
 
-        <div class="desktop-navBar">
-            <div class="container">
-                <div class="column">
-                    <div class="name">Elliot Britton</div>
-                    <div class="occupation">Developer</div>
-                </div>
-                <div class="column">
-                    <div class="navRight">
-                        <div class="name">&nbsp;</div>
-                        <div class="navbar">
-                            <a href=""></a>
-                            Resume | Projects | Contact
-                        </div>
+</head>
+
+<body>
+
+    <!-- desktop navbar  -->
+    <div class="desktop-navBar">
+        <div class="container">
+            <div class="column">
+                <div class="name">Elliot Britton</div>
+                <div class="occupation">Developer</div>
+            </div>
+            <div class="column">
+                <div class="navRight">
+                    <div class="name">&nbsp;</div>
+                    <div class="navbar">
+                        <a href="resume.html" style="font-weight: 700;">Resume</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="projects.html">Projects</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="contact.html">Contact</a>
                     </div>
-              </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <hr>
 
+    <!-- central section -->
+    <div class="container" style="height: 600px;">
+        <iframe style="margin: auto; width: 70%; height: 100%;" src="https://ebritt07-files.s3.amazonaws.com/Elliot-Britton-resume.pdf" title="resume PDF"></iframe>
+    </div>
+    <hr>
 
-        <h1><span id="greeting"></span></h1>
+    <!-- footer -->
+    <div class="footer container">
+        <div class="column">
+            <h3>Resume</h3>
+            <p><a href="https://ebritt07-files.s3.amazonaws.com/Elliot-Britton-resume.pdf" target="_blank">Download
+                    Resume</a></p>
+        </div>
+        <div class="column">
+            <h3>Github</h3>
+            <p><a href="https://github.com/ebritt07" target="_blank">Visit Github</a></p>
+        </div>
+        <div class="column">
+            <h3>Linkedin</h3>
+            <p><a href="https://linkedin.com/in/elliotbritton" target="_blank">Visit Linkedin</a></p>
+        </div>
+        <div class="column">
+            <h3>Repo</h3>
+            <p><a href="https://linkedin.com/in/elliotbritton" target="_blank">Visit this site's Github repository</a>
+            </p>
+        </div>
+    </div>
 
+    <script src="js/greeting.js"></script>
+    <script src="js/fillProjects.js"></script>
 
-        
-        <h2>About Me</h2>
-        <p>Write a short introduction about yourself here.</p>
-        
-        <h2>Resume</h2>
-        <p><a href="link-to-your-resume.pdf">Download Resume</a></p>
-        
-        <h2>GitHub</h2>
-        <p><a href="https://github.com/ebritt07">Visit GitHub</a></p>
+</body>
 
-        <h2>Linkedin</h2>
-        <p><a href="https://github.com/ebritt07">Visit Linkedin</a></p>
-        
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="project-1.html">Project 1</a></li>
-            <li><a href="project-2.html">Project 2</a></li>
-            <li><a href="project-3.html">Project 3</a></li>
-        </ul>
-
-        <script src="greeting.js"></script>
-    </body>
 </html>
