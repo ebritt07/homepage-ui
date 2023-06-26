@@ -1,5 +1,9 @@
 name: Prod workflow
 
+env:
+  PUBLIC_WEBSITE_BUCKET: www.elliotbritton.com
+  PUBLIC_FILES_BUCKET: ebritt07-files
+
 on:
   push:
     branches: [main]
@@ -8,8 +12,21 @@ permissions:
       id-token: write
       contents: read
 jobs:
-  AssumeRoleAndCallIdentity:
+  build:
     runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+            
+      - name: Code quality checks
+        run: |
+          echo "TODO: This step should check code format and spot bugs."
+
+  AWS-deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -24,4 +41,9 @@ jobs:
       - name: AWS WhoAmI and S3 List
         run: |
           aws sts get-caller-identity
-          aws s3 ls s3://ebritt07-files --recursive
+          aws s3 ls s3://$PUBLIC_FILES_BUCKET --recursive
+          aws s3 ls s3://$PUBLIC_WEBSITE_BUCKET --recursive
+
+      - name: Push to S3 hosting bucket
+        run: |
+          aws s3 sync . s3://$PUBLIC_WEBSITE_BUCKET --exclude ".*"
