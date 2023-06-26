@@ -2,18 +2,26 @@ name: Prod workflow
 
 on:
   push:
-    branches:
-      - main  # Change this to your default branch if necessary
-
+    branches: [main]
+  
+permissions:
+      id-token: write
+      contents: read
 jobs:
-  build:
+  AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Count HTML files
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::822182968898:role/github_code_deploy_non_prod
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: us-east-1
+          
+      - name: AWS WhoAmI and S3 List
         run: |
-          file_count=$(find . -type f -name "*.html" | wc -l)
-          echo "Number of .html files in this repo: $file_count"
+          aws sts get-caller-identity
+          aws s3 ls s3://ebritt07-files --recursive
