@@ -5,8 +5,8 @@ const projects = [
     color: "#337ab7",
   },
   {
-    title: "Java Spring App",
-    link: "https://github.com/ebritt07/homepage-service",
+    title: "Evolution Simulator",
+    link: "https://github.com/ebritt07/evo-sim/",
     color: "#fcb103",
   },
   // { title: "BTC Trader 3", link: "https://github.com/ebritt07/homepage-ui", color: "#d18290" },
